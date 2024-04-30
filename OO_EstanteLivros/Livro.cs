@@ -12,6 +12,19 @@
     {
 
     }
+
+    // criado com create construct apertando Ctrl + ponto
+    /*public Livro(string titulo, string[] autores, DateOnly dtlancamento, string editora, int edicao, int isbn, int paginas)
+    {
+        this.titulo = titulo;
+        this.autores = autores;
+        this.dtlancamento = dtlancamento;
+        this.editora = editora;
+        this.edicao = edicao;
+        this.isbn = isbn;
+        this.paginas = paginas;
+    }*/
+
     public void DefinirTitulo(string dados)
     {
         this.titulo = dados;
@@ -40,24 +53,24 @@
     {
         this.paginas = dados;
     }
-    public string InformarLivro()
+    public string ImprimirLivro()
     {
-        string Livro = "";
-        Livro += $"Título: {this.titulo}\n";
-        Livro += $"Dt.Lançamento: {this.dtlancamento}\n";
-        Livro += $"Autor(es): ";
+        string LivroImpresso = "";
+        LivroImpresso += $"Título: {this.titulo}\n";
+        LivroImpresso += $"Dt.Lançamento: {this.dtlancamento}\n";
+        LivroImpresso += $"Autor(es): ";
         for (int i = 0; i < 3; i++)
         {
             if (this.autores[i] != null)
             {
-                Livro += $"{this.autores[i]}. ";
+                LivroImpresso += $"{this.autores[i]}. ";
             }
         }
-        Livro += $"Editora: {this.editora}\n";
-        Livro += $"Edição: {this.edicao}\n";
-        Livro += $"ISBN: {this.isbn}\n";
-        Livro += $"{this.paginas} páginas";
+        LivroImpresso += $"Editora: {this.editora}\n";
+        LivroImpresso += $"Edição: {this.edicao}\n";
+        LivroImpresso += $"ISBN: {this.isbn}\n";
+        LivroImpresso += $"{this.paginas} páginas";
 
-        return Livro;
+        return LivroImpresso;
     }
 }

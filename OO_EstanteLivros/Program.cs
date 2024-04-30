@@ -1,6 +1,5 @@
-﻿string[] Estante = new string[10];
-int QtdeLivros = 0, EscolherLivro = 0, contLivro = 0;
-Livro meuLivro = new Livro();
+﻿int QtdeLivros = 0, contLivro = 0;
+Livro[] estante = new Livro[10];
 
 Livro GerarObjetoLivro(int nrolivro)
 {
@@ -17,7 +16,7 @@ Livro GerarObjetoLivro(int nrolivro)
     }
     for (int i = 0; i < autores; i++)
     {
-        Console.WriteLine($"Infome o nome do {i + 1}o Autor:");
+        Console.WriteLine($"Informe o nome do {i + 1}o Autor:");
         objLivro.DefinirAutores(i, Console.ReadLine());
     }
 
@@ -47,8 +46,9 @@ void InserirLivro()
     }
     for (int i = 0; i < QtdeLivros; i++)
     {
+        Livro meuLivro = new Livro();
         meuLivro = GerarObjetoLivro(QtdeLivros);
-        Estante[i] = meuLivro.InformarLivro();
+        estante[i] = meuLivro; // meuLivro/meuLivro.ImprimirLivro();
         contLivro++;
     }
 }
@@ -62,9 +62,9 @@ void ImprimirEstante()
         case 0:
             for (int i = 0; i < 10; i++)
             {
-                if (Estante[i] != null)
+                if (estante[i] != null)
                 {
-                    Console.WriteLine(Estante[i]);
+                    Console.WriteLine(estante[i].ImprimirLivro());
                     Console.WriteLine();
                 }
             }
@@ -72,14 +72,14 @@ void ImprimirEstante()
         default:
             while (posicao > 0 && posicao < 10)
             {
-                if (Estante[posicao - 1] == null)
+                if (estante[posicao - 1] == null)
                 {
                     Console.WriteLine("Essa prateleira não possui livros!");
                     posicao = -1;
                 }
                 else
                 {
-                    Console.WriteLine(Estante[posicao - 1]);
+                    Console.WriteLine(estante[posicao - 1].ImprimirLivro());
                     posicao = -1;
                 }
             }
