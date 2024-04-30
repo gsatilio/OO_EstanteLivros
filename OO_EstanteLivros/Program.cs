@@ -38,7 +38,6 @@ Livro GerarObjetoLivro(int nrolivro)
 
     return objLivro;
 }
-
 void InserirLivro()
 {
     while (QtdeLivros <= 0)
@@ -53,7 +52,6 @@ void InserirLivro()
         contLivro++;
     }
 }
-
 void ImprimirEstante()
 {
     int posicao;
@@ -88,10 +86,8 @@ void ImprimirEstante()
             break;
     }
 }
-
 InserirLivro();
 while (true)
 {
     ImprimirEstante();
 }
-

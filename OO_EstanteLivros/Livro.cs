@@ -1,4 +1,4 @@
-﻿internal class Livro
+﻿public class Livro
 {
     public string titulo;
     public string[] autores = new string[3];
