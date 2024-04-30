@@ -82,6 +82,7 @@ void ImprimirEstante()
                 else
                 {
                     Console.WriteLine(Estante[posicao - 1]);
+                    posicao = -1;
                 }
             }
             break;
